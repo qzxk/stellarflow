@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Claude Code Configuration for Claude Flow
 
 ## 🚨 CRITICAL: PARALLEL EXECUTION AFTER SWARM INIT
@@ -8,6 +9,9 @@
 2. **Task spawning** → Spawn ALL agents in ONE message
 3. **File operations** → Batch ALL reads/writes together
 4. **NEVER** operate sequentially after swarm init
+=======
+# Claude Code Configuration - SPARC Development Environment (Batchtools Optimized)
+>>>>>>> 3bbd935c7e5a9a46a1718650773766879ff32225
 
 ## 🚨 CRITICAL: CONCURRENT EXECUTION FOR ALL ACTIONS
 
@@ -34,7 +38,6 @@
   - Task("Agent 3 with full instructions and hooks")
   - Read("file1.js")
   - Read("file2.js")
-  - Read("file3.js")
   - Write("output1.js", content)
   - Write("output2.js", content)
   - Bash("npm install")
@@ -67,12 +70,14 @@ Before sending ANY message, ask yourself:
 
 If ANY answer is "No", you MUST combine operations into a single message!
 
-## 🚀 CRITICAL: Claude Code Does ALL Real Work
+## Project Overview
+This project uses the SPARC (Specification, Pseudocode, Architecture, Refinement, Completion) methodology for systematic Test-Driven Development with AI assistance through Claude-Flow orchestration.
 
-### 🎯 CLAUDE CODE IS THE ONLY EXECUTOR
+**🚀 Batchtools Optimization Enabled**: This configuration includes optimized prompts and parallel processing capabilities for improved performance and efficiency.
 
-**ABSOLUTE RULE**: Claude Code performs ALL actual work:
+## SPARC Development Commands
 
+<<<<<<< HEAD
 ### ✅ Claude Code ALWAYS Handles:
 
 - 🔧 **ALL file operations** (Read, Write, Edit, MultiEdit, Glob, Grep)
@@ -94,9 +99,26 @@ If ANY answer is "No", you MUST combine operations into a single message!
 - 📊 **Performance tracking** - Monitoring Claude Code's efficiency
 - 🐝 **Swarm orchestration** - Coordinating multiple Claude Code instances
 - 🔗 **GitHub integration** - Advanced repository coordination
+=======
+### Core SPARC Commands
+- `npx claude-flow sparc modes`: List all available SPARC development modes
+- `npx claude-flow sparc run <mode> "<task>"`: Execute specific SPARC mode for a task
+- `npx claude-flow sparc tdd "<feature>"`: Run complete TDD workflow using SPARC methodology
+- `npx claude-flow sparc info <mode>`: Get detailed information about a specific mode
 
-### 🚨 CRITICAL SEPARATION OF CONCERNS:
+### Batchtools Commands (Optimized)
+- `npx claude-flow sparc batch <modes> "<task>"`: Execute multiple SPARC modes in parallel
+- `npx claude-flow sparc pipeline "<task>"`: Execute full SPARC pipeline with parallel processing
+- `npx claude-flow sparc concurrent <mode> "<tasks-file>"`: Process multiple tasks concurrently
+>>>>>>> 3bbd935c7e5a9a46a1718650773766879ff32225
 
+### Standard Build Commands
+- `npm run build`: Build the project
+- `npm run test`: Run the test suite
+- `npm run lint`: Run linter and format checks
+- `npm run typecheck`: Run TypeScript type checking
+
+<<<<<<< HEAD
 **❌ MCP Tools NEVER:**
 
 - Write files or create content
@@ -241,11 +263,18 @@ Message 6: Write "package.json"
 
 ### 1. Add MCP Server (Stdio - No Port Needed)
 
-```bash
-# Add Claude Flow MCP server to Claude Code using stdio
-claude mcp add claude-flow npx claude-flow@alpha mcp start
-```
+=======
+## SPARC Methodology Workflow (Batchtools Enhanced)
 
+### 1. Specification Phase (Parallel Analysis)
+>>>>>>> 3bbd935c7e5a9a46a1718650773766879ff32225
+```bash
+# Create detailed specifications with concurrent requirements analysis
+npx claude-flow sparc run spec-pseudocode "Define user authentication requirements" --parallel
+```
+**Batchtools Optimization**: Simultaneously analyze multiple requirement sources, validate constraints in parallel, and generate comprehensive specifications.
+
+<<<<<<< HEAD
 ### 2. Use MCP Tools for Coordination in Claude Code
 
 Once configured, Claude Flow MCP tools enhance Claude Code's coordination:
@@ -551,53 +580,63 @@ When you spawn an agent using the Task tool, that agent MUST:
 
 **1️⃣ BEFORE Starting Work:**
 
+=======
+### 2. Pseudocode Phase (Concurrent Logic Design)
+>>>>>>> 3bbd935c7e5a9a46a1718650773766879ff32225
 ```bash
-# Check previous work and load context
-npx claude-flow@alpha hooks pre-task --description "[agent task]" --auto-spawn-agents false
-npx claude-flow@alpha hooks session-restore --session-id "swarm-[id]" --load-memory true
+# Develop algorithmic logic with parallel pattern analysis
+npx claude-flow sparc run spec-pseudocode "Create authentication flow pseudocode" --batch-optimize
 ```
+**Batchtools Optimization**: Process multiple algorithm patterns concurrently, validate logic flows in parallel, and optimize data structures simultaneously.
 
+<<<<<<< HEAD
 **2️⃣ DURING Work (After EVERY Major Step):**
 
+=======
+### 3. Architecture Phase (Parallel Component Design)
+>>>>>>> 3bbd935c7e5a9a46a1718650773766879ff32225
 ```bash
-# Store progress in memory after each file operation
-npx claude-flow@alpha hooks post-edit --file "[filepath]" --memory-key "swarm/[agent]/[step]"
-
-# Store decisions and findings
-npx claude-flow@alpha hooks notification --message "[what was done]" --telemetry true
-
-# Check coordination with other agents
-npx claude-flow@alpha hooks pre-search --query "[what to check]" --cache-results true
+# Design system architecture with concurrent component analysis
+npx claude-flow sparc run architect "Design authentication service architecture" --parallel
 ```
+**Batchtools Optimization**: Generate multiple architectural alternatives simultaneously, validate integration points in parallel, and create comprehensive documentation concurrently.
 
+<<<<<<< HEAD
 **3️⃣ AFTER Completing Work:**
 
+=======
+### 4. Refinement Phase (Parallel TDD Implementation)
+>>>>>>> 3bbd935c7e5a9a46a1718650773766879ff32225
 ```bash
-# Save all results and learnings
-npx claude-flow@alpha hooks post-task --task-id "[task]" --analyze-performance true
-npx claude-flow@alpha hooks session-end --export-metrics true --generate-summary true
+# Execute Test-Driven Development with parallel test generation
+npx claude-flow sparc tdd "implement user authentication system" --batch-tdd
 ```
+**Batchtools Optimization**: Generate multiple test scenarios simultaneously, implement and validate code in parallel, and optimize performance concurrently.
 
-### 🎯 AGENT PROMPT TEMPLATE
-
-When spawning agents, ALWAYS include these coordination instructions:
-
+### 5. Completion Phase (Concurrent Integration)
+```bash
+# Integration with parallel validation and documentation
+npx claude-flow sparc run integration "integrate authentication with user management" --parallel
 ```
-You are the [Agent Type] agent in a coordinated swarm.
+**Batchtools Optimization**: Run integration tests in parallel, generate documentation concurrently, and validate requirements simultaneously.
 
-MANDATORY COORDINATION:
-1. START: Run `npx claude-flow@alpha hooks pre-task --description "[your task]"`
-2. DURING: After EVERY file operation, run `npx claude-flow@alpha hooks post-edit --file "[file]" --memory-key "agent/[step]"`
-3. MEMORY: Store ALL decisions using `npx claude-flow@alpha hooks notification --message "[decision]"`
-4. END: Run `npx claude-flow@alpha hooks post-task --task-id "[task]" --analyze-performance true`
+## Batchtools Integration Features
 
-Your specific task: [detailed task description]
+### Parallel Processing Capabilities
+- **Concurrent File Operations**: Read, analyze, and modify multiple files simultaneously
+- **Parallel Code Analysis**: Analyze dependencies, patterns, and architecture concurrently
+- **Batch Test Generation**: Create comprehensive test suites in parallel
+- **Concurrent Documentation**: Generate multiple documentation formats simultaneously
 
-REMEMBER: Coordinate with other agents by checking memory BEFORE making decisions!
-```
+### Performance Optimizations
+- **Smart Batching**: Group related operations for optimal performance
+- **Pipeline Processing**: Chain dependent operations with parallel stages
+- **Resource Management**: Efficient utilization of system resources
+- **Error Resilience**: Robust error handling with parallel recovery
 
-### ⚡ PARALLEL EXECUTION IS MANDATORY
+## Performance Benchmarks
 
+<<<<<<< HEAD
 **THIS IS WRONG ❌ (Sequential - NEVER DO THIS):**
 
 ```
@@ -644,11 +683,34 @@ Message 2: [BatchTool - Claude Code execution]
   - Write "api/routes/users.js"
   - Bash "mkdir -p api/{routes,models,tests}"
 ```
+=======
+### Batchtools Performance Improvements
+- **File Operations**: Up to 300% faster with parallel processing
+- **Code Analysis**: 250% improvement with concurrent pattern recognition
+- **Test Generation**: 400% faster with parallel test creation
+- **Documentation**: 200% improvement with concurrent content generation
+- **Memory Operations**: 180% faster with batched read/write operations
 
-### 🎯 MANDATORY SWARM PATTERN
+## Code Style and Best Practices (Batchtools Enhanced)
 
-When given ANY complex task with swarms:
+### SPARC Development Principles with Batchtools
+- **Modular Design**: Keep files under 500 lines, optimize with parallel analysis
+- **Environment Safety**: Never hardcode secrets, validate with concurrent checks
+- **Test-First**: Always write tests before implementation using parallel generation
+- **Clean Architecture**: Separate concerns with concurrent validation
+- **Parallel Documentation**: Maintain clear, up-to-date documentation with concurrent updates
+>>>>>>> 3bbd935c7e5a9a46a1718650773766879ff32225
 
+### Batchtools Best Practices
+- **Parallel Operations**: Use batchtools for independent tasks
+- **Concurrent Validation**: Validate multiple aspects simultaneously
+- **Batch Processing**: Group similar operations for efficiency
+- **Pipeline Optimization**: Chain operations with parallel stages
+- **Resource Management**: Monitor and optimize resource usage
+
+## Important Notes (Enhanced)
+
+<<<<<<< HEAD
 ```
 STEP 1: IMMEDIATE PARALLEL SPAWN (Single Message!)
 [BatchTool]:
@@ -669,15 +731,21 @@ STEP 1: IMMEDIATE PARALLEL SPAWN (Single Message!)
   - mcp__claude-flow__agent_spawn { type: "researcher", name: "Tech Lead" }
   - mcp__claude-flow__agent_spawn { type: "coordinator", name: "PM" }
   - TodoWrite { todos: [multiple todos at once] }
+=======
+- Always run tests before committing with parallel execution (`npm run test --parallel`)
+- Use SPARC memory system with concurrent operations to maintain context across sessions
+- Follow the Red-Green-Refactor cycle with parallel test generation during TDD phases
+- Document architectural decisions with concurrent validation in memory
+- Regular security reviews with parallel analysis for authentication or data handling code
+- Claude Code slash commands provide quick access to batchtools-optimized SPARC modes
+- Monitor system resources during parallel operations for optimal performance
+>>>>>>> 3bbd935c7e5a9a46a1718650773766879ff32225
 
-STEP 2: PARALLEL TASK EXECUTION (Single Message!)
-[BatchTool]:
-  - mcp__claude-flow__task_orchestrate { task: "main task", strategy: "parallel" }
-  - mcp__claude-flow__memory_usage { action: "store", key: "init", value: {...} }
-  - Multiple Read operations
-  - Multiple Write operations
-  - Multiple Bash commands
+For more information about SPARC methodology and batchtools optimization, see: 
+- SPARC Guide: https://github.com/ruvnet/claude-code-flow/docs/sparc.md
+- Batchtools Documentation: https://github.com/ruvnet/claude-code-flow/docs/batchtools.md
 
+<<<<<<< HEAD
 STEP 3: CONTINUE PARALLEL WORK (Never Sequential!)
 ```
 
@@ -904,3 +972,11 @@ Claude Flow extends the base coordination with:
 ---
 
 Remember: **Claude Flow coordinates, Claude Code creates!** Start with `mcp__claude-flow__swarm_init` to enhance your development workflow.
+=======
+# important-instruction-reminders
+Do what has been asked; nothing more, nothing less.
+NEVER create files unless they're absolutely necessary for achieving your goal.
+ALWAYS prefer editing an existing file to creating a new one.
+NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested by the User.
+NEVER create md or test files in root directories or system folders.
+>>>>>>> 3bbd935c7e5a9a46a1718650773766879ff32225

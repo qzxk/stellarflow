@@ -93,7 +93,10 @@ test-reports/
 .swarm/memory.db*
 .hive-mind/hive.db*
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3bbd935c7e5a9a46a1718650773766879ff32225
 # Claude Flow generated files
 .claude/settings.local.json
 .mcp.json

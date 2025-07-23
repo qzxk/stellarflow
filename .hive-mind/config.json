@@ -1,6 +1,10 @@
 {
   "version": "2.0.0",
+<<<<<<< HEAD
   "initialized": "2025-07-23T11:39:29.483Z",
+=======
+  "initialized": "2025-07-17T03:49:28.570Z",
+>>>>>>> 3bbd935c7e5a9a46a1718650773766879ff32225
   "defaults": {
     "queenType": "strategic",
     "maxWorkers": 8,

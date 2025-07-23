@@ -27,6 +27,7 @@
     __dirname = process.cwd();
   }
 
+<<<<<<< HEAD
   // Try multiple strategies to find claude-flow
   const strategies = [
     // 1. Local node_modules
@@ -39,6 +40,13 @@
         }
       } catch {}
     },
+=======
+# Development mode - use local bin
+if [ -f "/workspaces/claude-code-flow/bin/claude-flow" ]; then
+  cd "${PROJECT_DIR}"
+  exec "/workspaces/claude-code-flow/bin/claude-flow" "$@"
+fi
+>>>>>>> 3bbd935c7e5a9a46a1718650773766879ff32225
 
     // 2. Parent node_modules (monorepo)
     async () => {
