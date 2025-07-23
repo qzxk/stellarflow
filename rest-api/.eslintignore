@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Test results
+test-results/
+
+# Documentation
+docs/
+
+# Database files
+*.sqlite
+*.db
+data/
+
+# Logs
+logs/
+
+# Scripts
+scripts/migrations/
+
+# Config files
+.eslintrc.js
+.prettierrc.js
+jest.config.js
+ecosystem.config.js
