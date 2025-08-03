@@ -5,7 +5,7 @@
 [![🌟 Star on GitHub](https://img.shields.io/github/stars/ruvnet/claude-flow?style=for-the-badge&logo=github&color=gold)](https://github.com/ruvnet/claude-flow)
 [![📦 Alpha Release](https://img.shields.io/npm/v/claude-flow/alpha?style=for-the-badge&logo=npm&color=orange&label=v2.0.0-alpha.53)](https://www.npmjs.com/package/claude-flow/v/alpha)
 [![⚡ Claude Code](https://img.shields.io/badge/Claude%20Code-Optimized-green?style=for-the-badge&logo=anthropic)](https://github.com/ruvnet/claude-flow)
-[![🏛️ Agentics Foundation](https://img.shields.io/badge/Agentics-Foundation-crimson?style=for-the-badge&logo=openai)](https://discord.agentics.org)
+[![🏛️ Agentics Foundation](https://img.shields.io/badge/Agentics-Foundation-crimson?style=for-the-badge&logo=openai)](https://discord.com/invite/dfxmpwkG2D)
 [![🐝 Hive-Mind](https://img.shields.io/badge/Hive--Mind-AI%20Coordination-purple?style=for-the-badge&logo=swarm)](https://github.com/ruvnet/claude-flow)
 [![🧠 Neural](https://img.shields.io/badge/Neural-87%20MCP%20Tools-blue?style=for-the-badge&logo=tensorflow)](https://github.com/ruvnet/claude-flow)
 [![🛡️ MIT License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge&logo=opensourceinitiative)](https://opensource.org/licenses/MIT)
@@ -45,8 +45,9 @@
 # 1. Install Claude Code globally
 npm install -g @anthropic-ai/claude-code
 
-# 2. Activate Claude Code with permissions
-claude --dangerously-skip-permissions
+# 2. (Optional) Skip permissions check for faster setup
+# Only use if you understand the security implications
+# claude --dangerously-skip-permissions
 ```
 
 💡 **Windows Note**: If you encounter SQLite errors, Claude Flow will automatically use in-memory storage. For persistent storage options, see our [Windows guide](https://github.com/ruvnet/claude-code-flow/blob/main/docs/windows-installation.md).
@@ -61,7 +62,7 @@ npx claude-flow@alpha init --force
 npx claude-flow@alpha --help
 
 # 3a. Quick AI coordination (recommended for most tasks)
-npx claude-flow@alpha swarm "build me a REST API" --claude
+npx claude-flow@alpha swarm "build me a REST API"
 
 # 3b. OR launch the full hive-mind system (for complex projects)
 npx claude-flow@alpha hive-mind wizard
@@ -269,7 +270,7 @@ Claude-Flow v2.0.0 introduces groundbreaking hive-mind architecture where a **Qu
 
 ```bash
 # Deploy intelligent swarm coordination
-npx claude-flow@alpha swarm "Build a full-stack application" --strategy development --claude
+npx claude-flow@alpha swarm "Build a full-stack application" --strategy development
 
 # Launch hive-mind with specific specializations
 npx claude-flow@alpha hive-mind spawn "Create microservices architecture" --agents 8 --claude
@@ -501,8 +502,7 @@ npx claude-flow@alpha workflow create --name "Development Pipeline" --parallel
 npx claude-flow@alpha hive-mind spawn "Build e-commerce platform with React, Node.js, and PostgreSQL" \
   --agents 10 \
   --strategy parallel \
-  --memory-namespace ecommerce \
-  --claude
+  --memory-namespace ecommerce
 
 # Monitor progress in real-time
 npx claude-flow@alpha swarm monitor --dashboard --real-time
@@ -514,8 +514,7 @@ npx claude-flow@alpha swarm monitor --dashboard --real-time
 npx claude-flow@alpha swarm "Research AI safety in autonomous systems" \
   --strategy research \
   --neural-patterns enabled \
-  --memory-compression high \
-  --claude
+  --memory-compression high
 
 # Analyze results with cognitive computing
 npx claude-flow@alpha cognitive analyze --target research-results
@@ -831,6 +830,26 @@ Claude-Flow v2.0.0 Alpha automatically configures secure defaults:
 
 ---
 
+## 📚 **Additional Documentation**
+
+### Core Documentation
+- [Complete API Reference](docs/API.md) - Comprehensive API documentation
+- [CLI Commands Guide](docs/CLI.md) - All command-line options
+- [Architecture Overview](docs/ARCHITECTURE.md) - System design and internals
+- [Examples Directory](examples/) - Code examples and demos
+
+### New Features (v2.0.0)
+- [🔒 Git Checkpoint System](docs/GIT_CHECKPOINT_HOOKS.md) - Automatic Git checkpoints for Claude Code sessions
+- [📊 Real Performance Tracking](docs/REAL_PERFORMANCE_TRACKING.md) - Actual metrics collection and analysis
+- [🪟 Windows Installation](docs/windows-installation.md) - Special instructions for Windows users
+
+### Integration Guides
+- [MCP Server Setup](docs/mcp-setup.md) - Model Context Protocol configuration
+- [Claude Code Integration](docs/claude-code-integration.md) - Enhanced AI workflows
+- [GitHub Workflows](docs/github-workflows.md) - Repository automation
+
+---
+
 ## 📄 **License**
 
 MIT License - see [LICENSE](./LICENSE) for details.
@@ -860,7 +879,7 @@ npx claude-flow@alpha init --force
 
 [![GitHub](https://img.shields.io/badge/GitHub-Alpha%20Branch-blue?style=for-the-badge&logo=github)](https://github.com/ruvnet/claude-flow/tree/claude-flow-v2.0.0)
 [![NPM Alpha](https://img.shields.io/badge/NPM-Alpha%20Release-orange?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/claude-flow/v/alpha)
-[![Discord](https://img.shields.io/badge/Discord-Agentics%20Community-purple?style=for-the-badge&logo=discord)](https://discord.agentics.org)
+[![Discord](https://img.shields.io/badge/Discord-Agentics%20Community-purple?style=for-the-badge&logo=discord)](https://discord.com/invite/dfxmpwkG2D)
 
 ---
 

@@ -31,6 +31,12 @@ import {
   fixHookVariablesCommand,
   fixHookVariablesCommandConfig,
 } from './simple-commands/fix-hook-variables.js';
+import { 
+  initializePerformanceTracking,
+  trackCommandExecution 
+} from './simple-commands/performance-hooks.js';
+// Maestro commands integrated with clean implementation
+// Note: Maestro TypeScript commands now integrated directly in ./commands/maestro.ts
 // Note: TypeScript imports commented out for Node.js compatibility
 // import { ruvSwarmAction } from './commands/ruv-swarm.ts';
 // import { configIntegrationAction } from './commands/config-integration.ts';
@@ -114,6 +120,28 @@ First-time users should run: npx claude-flow@latest init --sparc`,
       'sparc run code "implement feature"        # Run specific mode',
       'sparc tdd "feature description"           # TDD workflow',
       'sparc info architect                      # Mode details',
+    ],
+  });
+
+  // Note: Maestro commands are now handled by TypeScript module
+  // See src/cli/commands/maestro.ts for the clean implementation
+  commandRegistry.set('maestro', {
+    handler: () => {
+      console.log('⚠️  Maestro commands have been moved to TypeScript.');
+      console.log('Please use: npx claude-flow maestro help');
+      console.log('Or import from: ./commands/maestro.js after compilation');
+    },
+    description: 'Maestro: Specs-Driven Development with Hive Mind Integration',
+    usage: 'maestro <subcommand> [options]',
+    examples: [
+      'maestro create-spec my-feature --request "Implement user auth"',
+      'maestro generate-design my-feature',
+      'maestro generate-tasks my-feature',
+      'maestro implement-task my-feature 1',
+      'maestro approve-phase my-feature',
+      'maestro status my-feature --detailed',
+      'maestro init-steering api-design',
+      'maestro help',
     ],
   });
 
@@ -696,7 +724,8 @@ export async function executeCommand(name, subArgs, flags) {
   }
 
   try {
-    await command.handler(subArgs, flags);
+    // Track command execution for performance metrics
+    await trackCommandExecution(name, command.handler, subArgs, flags);
   } catch (err) {
     throw new Error(`Command '${name}' failed: ${err.message}`);
   }
@@ -790,3 +819,9 @@ export function showAllCommands() {
 
 // Initialize the command registry
 registerCoreCommands();
+
+// Initialize performance tracking
+initializePerformanceTracking().catch(err => {
+  // Performance tracking is optional, don't fail if it errors
+  console.error('Failed to initialize performance tracking:', err.message);
+});
